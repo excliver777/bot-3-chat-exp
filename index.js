@@ -3,7 +3,7 @@ const canvacord = require("canvacord")
 const knex = require("knex")({ client: "sqlite3", connection: { filename: "./data.db" }, useNullAsDefault: false }) 
 const intent_list = new Discord.Intents(["GUILD_MEMBERS", "GUILD_MESSAGES", "GUILDS", "GUILD_PRESENCES"])
 const client = new Discord.Client({ ws: { intents: intent_list } })
-const token = "OTc1MDI2OTE3NDY2MDQ2NTU2.GzMBeE.RrIaou_jT990SybtuFneBZbjFBiLVMUAVcM-V0"
+const token = ""
 const cooltime = 3 
 const requireEXP = 100 
 const [minimum, maximum] = [2, 10] 
@@ -181,4 +181,4 @@ async function registerUser(message) {
   })
 }
 
-client.login(token)
+client.login(process.env.token)
